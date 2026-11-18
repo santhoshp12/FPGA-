@@ -1,15 +1,15 @@
 # FPGA-
-vivado_8x1-using-2x1-mux
-REG NUM :26012515
-NAME :Santhosh P
-EXPERIMENT – 1 Design and Implementation of 8×1 Multiplexer Using 2×1 Multiplexers
-AIM
+# vivado_8x1-using-2x1-mux
+# REG NUM :26012515
+# NAME :Santhosh P
+# EXPERIMENT – 1 Design and Implementation of 8×1 Multiplexer Using 2×1 Multiplexers
+# AIM
 To design, simulate and implement an 8×1 multiplexer using 2×1 multiplexers in Verilog and verify its operation on the Boolean Board (Spartan-7).
 
-TOOLS REQUIRED
+# TOOLS REQUIRED
 Vivado Design Suite 2023/2024 Boolean Board – Spartan-7 FPGA Computer with USB connection Micro USB cable
 
-THEORY
+# THEORY
 A multiplexer (MUX) is a combinational circuit that selects one input from multiple inputs and forwards it to the output. An 8×1 MUX selects one of 8 inputs using 3 select lines (S2 S1 S0).
 
 Truth Table Concept:
@@ -25,7 +25,7 @@ S2 S1 S0	Output
 1  1  1	   d7
 To build an 8×1 MUX using 2×1 MUXes: First stage: 4 multiplexers → choose between pairs of inputs Second stage: 2 multiplexers → choose between outputs of previous stage Final stage: 1 multiplexer → final output Total used = 7 multiplexers of 2×1
 
-VERILOG PROGRAM
+# VERILOG PROGRAM
 
 mux2x1.v
 module mux2x1(input d0, d1, input sel, output y);
@@ -52,7 +52,7 @@ module mux8x1(
     mux2x1 m7(w2[0], w2[1], sel[0], y);
 
 endmodule
-TESTBENCH
+# TESTBENCH
 module tb_mux8x1;
     reg [7:0] d;
     reg [2:0] sel;
@@ -77,7 +77,7 @@ module tb_mux8x1;
         $finish;
     end
 endmodule
-XDC FILE (Boolean Board – Spartan-7)
+# XDC FILE (Boolean Board – Spartan-7)
 8 switches used for d[7:0] 3 switches used for sel[2:0] 1 LED used for output y
 
 # Data Inputs d[7:0]
@@ -97,10 +97,10 @@ set_property -dict {PACKAGE_PIN M2 IOSTANDARD LVCMOS33} [get_ports {sel[2]}]
 
 # Output LED
 set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS33} [get_ports {y}]
-PROCEDURE
+# PROCEDURE
 Open Vivado → Create New Project Add Verilog files (mux2x1.v, mux8x1.v, testbench) Set mux8x1 as Top Module Add XDC constraints file Run Behavioral Simulation Verify output waveforms Run Synthesis → Implementation → Generate Bitstream Program Boolean Board Change switches and verify LED output
 
-OUTPUT
+# OUTPUT
 image
-RESULT
+# RESULT
 The 8×1 multiplexer was successfully designed using 2×1 multiplexers, simulated in Vivado, and implemented on the Boolean Board (Spartan-7). The output LED correctly displayed the selected input based on the select switch values.
