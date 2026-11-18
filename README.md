@@ -80,7 +80,7 @@ endmodule
 # XDC FILE (Boolean Board – Spartan-7)
 8 switches used for d[7:0] 3 switches used for sel[2:0] 1 LED used for output y
 
-# Data Inputs d[7:0]
+#Data Inputs d[7:0]
 set_property -dict {PACKAGE_PIN V2 IOSTANDARD LVCMOS33} [get_ports {d[0]}]
 set_property -dict {PACKAGE_PIN U2 IOSTANDARD LVCMOS33} [get_ports {d[1]}]
 set_property -dict {PACKAGE_PIN U1 IOSTANDARD LVCMOS33} [get_ports {d[2]}]
@@ -90,12 +90,12 @@ set_property -dict {PACKAGE_PIN R2 IOSTANDARD LVCMOS33} [get_ports {d[5]}]
 set_property -dict {PACKAGE_PIN R1 IOSTANDARD LVCMOS33} [get_ports {d[6]}]
 set_property -dict {PACKAGE_PIN P2 IOSTANDARD LVCMOS33} [get_ports {d[7]}]
 
-# Select Inputs
+#Select Inputs
 set_property -dict {PACKAGE_PIN N2 IOSTANDARD LVCMOS33} [get_ports {sel[0]}]
 set_property -dict {PACKAGE_PIN N1 IOSTANDARD LVCMOS33} [get_ports {sel[1]}]
 set_property -dict {PACKAGE_PIN M2 IOSTANDARD LVCMOS33} [get_ports {sel[2]}]
 
-# Output LED
+#Output LED
 set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS33} [get_ports {y}]
 # PROCEDURE
 Open Vivado → Create New Project Add Verilog files (mux2x1.v, mux8x1.v, testbench) Set mux8x1 as Top Module Add XDC constraints file Run Behavioral Simulation Verify output waveforms Run Synthesis → Implementation → Generate Bitstream Program Boolean Board Change switches and verify LED output
