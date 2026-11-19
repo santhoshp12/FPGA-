@@ -114,6 +114,7 @@ set_property -dict {PACKAGE_PIN M2 IOSTANDARD LVCMOS33} [get_ports {sel[2]}]
 set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS33} [get_ports {y}]
 ```
 ## PROCEDURE
+
 Open Vivado → Create New Project
 Add Verilog files (mux2x1.v, mux8x1.v, testbench)
 Set mux8x1 as Top Module
